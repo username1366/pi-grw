@@ -30,13 +30,13 @@ func main() {
 		p18.Write(rpi.HIGH)
 		p23.Write(rpi.HIGH)
 		p24.Write(rpi.HIGH)
-		time.Sleep(300 * time.Millisecond)
+		time.Sleep(1200 * time.Millisecond)
 		p11.Write(rpi.LOW)
 		p13.Write(rpi.LOW)
 		p15.Write(rpi.LOW)
 		p18.Write(rpi.LOW)
 		p23.Write(rpi.LOW)
 		p24.Write(rpi.LOW)
-		time.Sleep(100 * time.Millisecond)
+		time.Sleep(500 * time.Millisecond)
 	}
 }
