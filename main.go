@@ -11,7 +11,7 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
-	defer p.Close()
+	defer p24.Close()
 
 	for i := 0; i < 10; i++ {
 		p24.Write(rpi.HIGH)
