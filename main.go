@@ -7,7 +7,7 @@ import (
 )
 
 const (
-	Relay1 = 24
+	Relay1 = 23
 	Relay2 = 23
 	Relay3 = 27
 	Relay4 = 18
