@@ -13,6 +13,7 @@ const (
 	Relay4 = 24
 	Relay5 = 22
 	Relay6 = 17
+	Delay  = 30
 )
 
 func main() {
@@ -35,28 +36,29 @@ func main() {
 
 	for i := 0; i < 300; i++ {
 		relay1.Write(rpi.HIGH)
-		time.Sleep(100 * time.Millisecond)
+		time.Sleep(Delay * time.Millisecond)
 		relay2.Write(rpi.HIGH)
-		time.Sleep(100 * time.Millisecond)
+		time.Sleep(Delay * time.Millisecond)
 		relay3.Write(rpi.HIGH)
-		time.Sleep(100 * time.Millisecond)
+		time.Sleep(Delay * time.Millisecond)
 		relay4.Write(rpi.HIGH)
-		time.Sleep(100 * time.Millisecond)
+		time.Sleep(Delay * time.Millisecond)
 		relay5.Write(rpi.HIGH)
-		time.Sleep(100 * time.Millisecond)
+		time.Sleep(Delay * time.Millisecond)
 		relay6.Write(rpi.HIGH)
 
 		time.Sleep(1200 * time.Millisecond)
+
 		relay1.Write(rpi.LOW)
-		time.Sleep(100 * time.Millisecond)
+		time.Sleep(Delay * time.Millisecond)
 		relay2.Write(rpi.LOW)
-		time.Sleep(100 * time.Millisecond)
+		time.Sleep(Delay * time.Millisecond)
 		relay3.Write(rpi.LOW)
-		time.Sleep(100 * time.Millisecond)
+		time.Sleep(Delay * time.Millisecond)
 		relay4.Write(rpi.LOW)
-		time.Sleep(100 * time.Millisecond)
+		time.Sleep(Delay * time.Millisecond)
 		relay5.Write(rpi.LOW)
-		time.Sleep(100 * time.Millisecond)
+		time.Sleep(Delay * time.Millisecond)
 		relay6.Write(rpi.LOW)
 		time.Sleep(500 * time.Millisecond)
 
