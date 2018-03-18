@@ -7,11 +7,11 @@ import (
 )
 
 const (
-	Relay1 = 22
+	Relay1 = 24
 	Relay2 = 23
 	Relay3 = 27
 	Relay4 = 18
-	Relay5 = 24
+	Relay5 = 22
 	Relay6 = 17
 )
 
@@ -33,7 +33,7 @@ func main() {
 	//defer relay5.Close()
 	//defer relay6.Close()
 
-	for i := 0; i < 5; i++ {
+	for i := 0; i < 15; i++ {
 		relay1.Write(rpi.HIGH)
 		//relay2.Write(rpi.HIGH)
 		//relay3.Write(rpi.HIGH)
