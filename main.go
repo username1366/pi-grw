@@ -16,7 +16,7 @@ const (
 	Relay6 = 17
 	Delay  = 65
 )
-func main
+
 func main() {
 
 	relay1, _ := rpi.OpenPin(Relay1, rpi.OUT)
