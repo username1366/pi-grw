@@ -16,7 +16,7 @@ const (
 	Relay6 = 17
 	Delay  = 65
 )
-
+func main
 func main() {
 
 	relay1, _ := rpi.OpenPin(Relay1, rpi.OUT)
@@ -66,10 +66,10 @@ func main() {
 		fmt.Printf("%d\n", i)
 	}
 
-	relay1.Write(rpi.HIGH)
-	relay2.Write(rpi.HIGH)
-	relay3.Write(rpi.HIGH)
-	relay4.Write(rpi.HIGH)
-	relay5.Write(rpi.HIGH)
+	relay1.Write(rpi.LOW)
+	relay2.Write(rpi.LOW)
+	relay3.Write(rpi.LOW)
+	relay4.Write(rpi.LOW)
+	relay5.Write(rpi.LOW)
 	time.Sleep(18 * time.Hour)
 }
