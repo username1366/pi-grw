@@ -8,7 +8,7 @@ import (
 
 func main() {
 	p11, _ := rpi.OpenPin(11, rpi.OUT)
-	p27, _ := rpi.OpenPin(13, rpi.OUT)
+	p27, _ := rpi.OpenPin(27, rpi.OUT)
 	p15, _ := rpi.OpenPin(15, rpi.OUT)
 	p18, _ := rpi.OpenPin(18, rpi.OUT)
 	p23, _ := rpi.OpenPin(23, rpi.OUT)
