@@ -35,7 +35,7 @@ func main() {
 	defer relay5.Close()
 	defer relay6.Close()
 
-	for i := 0; i < 10; i++ {
+	for i := 0; i < 3; i++ {
 		relay1.Write(rpi.HIGH)
 		time.Sleep(Delay * time.Millisecond)
 		relay2.Write(rpi.HIGH)
@@ -71,5 +71,5 @@ func main() {
 	relay3.Write(rpi.HIGH)
 	relay4.Write(rpi.HIGH)
 	relay5.Write(rpi.HIGH)
-
+	time.Sleep(18 * time.Hour)
 }
