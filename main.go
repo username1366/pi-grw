@@ -11,7 +11,7 @@ const (
 	Relay2 = 18
 	Relay3 = 27
 	Relay4 = 24
-	Relay5 = 23
+	Relay5 = 22
 	Relay6 = 17
 )
 
