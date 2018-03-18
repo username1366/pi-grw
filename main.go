@@ -13,7 +13,7 @@ const (
 	Relay4 = 24
 	Relay5 = 22
 	Relay6 = 17
-	Delay  = 30
+	Delay  = 65
 )
 
 func main() {
