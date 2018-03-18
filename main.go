@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"time"
 
 	rpi "github.com/nathan-osman/go-rpigpio"
@@ -62,5 +63,6 @@ func main() {
 		relay6.Write(rpi.LOW)
 		time.Sleep(500 * time.Millisecond)
 
+		fmt.Printf("%s\n", i)
 	}
 }
