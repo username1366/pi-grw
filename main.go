@@ -8,7 +8,7 @@ import (
 )
 
 const (
-	Relay1 = 23
+	Relay1 = 23 // blue
 	Relay2 = 18
 	Relay3 = 27
 	Relay4 = 24
@@ -35,7 +35,7 @@ func main() {
 	defer relay5.Close()
 	defer relay6.Close()
 
-	for i := 0; i < 300; i++ {
+	for i := 0; i < 10; i++ {
 		relay1.Write(rpi.HIGH)
 		time.Sleep(Delay * time.Millisecond)
 		relay2.Write(rpi.HIGH)
@@ -63,6 +63,13 @@ func main() {
 		relay6.Write(rpi.LOW)
 		time.Sleep(500 * time.Millisecond)
 
-		fmt.Printf("%s\n", i)
+		fmt.Printf("%d\n", i)
 	}
+
+	relay1.Write(rpi.HIGH)
+	relay2.Write(rpi.HIGH)
+	relay3.Write(rpi.HIGH)
+	relay4.Write(rpi.HIGH)
+	relay5.Write(rpi.HIGH)
+
 }
