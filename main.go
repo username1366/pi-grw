@@ -1,7 +1,7 @@
 package main
 
 import (
-	"fmt"
+	"log"
 	"os"
 	"time"
 
@@ -63,9 +63,10 @@ func demo() {
 		relay6.Write(rpi.LOW)
 		time.Sleep(500 * time.Millisecond)
 
-		fmt.Printf("%d\n", i)
+		log.Printf("%d\n", i)
 	}
 
+	os.Exit(0)
 }
 
 func main() {
@@ -80,40 +81,47 @@ func main() {
 	relay3, _ := rpi.OpenPin(Relay3, rpi.OUT)
 	relay4, _ := rpi.OpenPin(Relay4, rpi.OUT)
 	relay5, _ := rpi.OpenPin(Relay5, rpi.OUT)
-	relay6, _ := rpi.OpenPin(Relay6, rpi.OUT)
+	//relay6, _ := rpi.OpenPin(Relay6, rpi.OUT)
 
 	defer relay1.Close()
 	defer relay2.Close()
 	defer relay3.Close()
 	defer relay4.Close()
 	defer relay5.Close()
-	defer relay6.Close()
+	//defer relay6.Close()
 
-	fmt.Println("Light off\n")
-	relay1.Write(rpi.HIGH)
-	relay2.Write(rpi.HIGH)
-	relay3.Write(rpi.HIGH)
-	relay4.Write(rpi.HIGH)
-	relay5.Write(rpi.HIGH)
-	relay6.Write(rpi.HIGH)
+	for {
+		log.Println("Light off\n")
+		relay1.Write(rpi.HIGH)
+		relay2.Write(rpi.HIGH)
+		relay3.Write(rpi.HIGH)
+		relay4.Write(rpi.HIGH)
+		relay5.Write(rpi.HIGH)
+		//relay6.Write(rpi.HIGH)
 
-	time.Sleep(60 * time.Second)
+		log.Println("Sleep 30 sec")
+		time.Sleep(30 * time.Second)
 
-	fmt.Println("Light on\n")
-	relay1.Write(rpi.LOW)
-	relay2.Write(rpi.LOW)
-	relay3.Write(rpi.LOW)
-	relay4.Write(rpi.LOW)
-	relay5.Write(rpi.LOW)
-	relay6.Write(rpi.LOW)
+		log.Println("Light on\n")
+		relay1.Write(rpi.LOW)
+		relay2.Write(rpi.LOW)
+		relay3.Write(rpi.LOW)
+		relay4.Write(rpi.LOW)
+		relay5.Write(rpi.LOW)
+		//relay6.Write(rpi.LOW)
 
-	time.Sleep(18 * time.Hour)
+		log.Println("Sleep 18 Hours")
+		time.Sleep(18 * time.Hour)
 
-	fmt.Println("Light off\n")
-	relay1.Write(rpi.HIGH)
-	relay2.Write(rpi.HIGH)
-	relay3.Write(rpi.HIGH)
-	relay4.Write(rpi.HIGH)
-	relay5.Write(rpi.HIGH)
-	relay6.Write(rpi.HIGH)
+		log.Println("Light off\n")
+		relay1.Write(rpi.HIGH)
+		relay2.Write(rpi.HIGH)
+		relay3.Write(rpi.HIGH)
+		relay4.Write(rpi.HIGH)
+		relay5.Write(rpi.HIGH)
+		//relay6.Write(rpi.HIGH)
+
+		log.Println("Sleep 6 Hours")
+		time.Sleep(6 * time.Hour)
+	}
 }
