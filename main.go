@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"os"
 	"time"
 
 	rpi "github.com/nathan-osman/go-rpigpio"
@@ -17,8 +18,7 @@ const (
 	Delay  = 65
 )
 
-func main() {
-
+func demo() {
 	relay1, _ := rpi.OpenPin(Relay1, rpi.OUT)
 	relay2, _ := rpi.OpenPin(Relay2, rpi.OUT)
 	relay3, _ := rpi.OpenPin(Relay3, rpi.OUT)
@@ -66,10 +66,54 @@ func main() {
 		fmt.Printf("%d\n", i)
 	}
 
+}
+
+func main() {
+	for _, v := range os.Args {
+		if v == "demo" {
+			demo()
+		}
+	}
+
+	relay1, _ := rpi.OpenPin(Relay1, rpi.OUT)
+	relay2, _ := rpi.OpenPin(Relay2, rpi.OUT)
+	relay3, _ := rpi.OpenPin(Relay3, rpi.OUT)
+	relay4, _ := rpi.OpenPin(Relay4, rpi.OUT)
+	relay5, _ := rpi.OpenPin(Relay5, rpi.OUT)
+	relay6, _ := rpi.OpenPin(Relay6, rpi.OUT)
+
+	defer relay1.Close()
+	defer relay2.Close()
+	defer relay3.Close()
+	defer relay4.Close()
+	defer relay5.Close()
+	defer relay6.Close()
+
+	fmt.Println("Light off\n")
+	relay1.Write(rpi.HIGH)
+	relay2.Write(rpi.HIGH)
+	relay3.Write(rpi.HIGH)
+	relay4.Write(rpi.HIGH)
+	relay5.Write(rpi.HIGH)
+	relay6.Write(rpi.HIGH)
+
+	time.Sleep(60 * time.Second)
+
+	fmt.Println("Light on\n")
 	relay1.Write(rpi.LOW)
 	relay2.Write(rpi.LOW)
 	relay3.Write(rpi.LOW)
 	relay4.Write(rpi.LOW)
 	relay5.Write(rpi.LOW)
+	relay6.Write(rpi.LOW)
+
 	time.Sleep(18 * time.Hour)
+
+	fmt.Println("Light off\n")
+	relay1.Write(rpi.HIGH)
+	relay2.Write(rpi.HIGH)
+	relay3.Write(rpi.HIGH)
+	relay4.Write(rpi.HIGH)
+	relay5.Write(rpi.HIGH)
+	relay6.Write(rpi.HIGH)
 }
