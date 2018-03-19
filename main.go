@@ -91,7 +91,7 @@ func main() {
 	//defer relay6.Close()
 
 	for {
-		log.Println("Light off\n")
+		log.Println("Light off")
 		relay1.Write(rpi.HIGH)
 		relay2.Write(rpi.HIGH)
 		relay3.Write(rpi.HIGH)
@@ -102,7 +102,7 @@ func main() {
 		log.Println("Sleep 30 sec")
 		time.Sleep(30 * time.Second)
 
-		log.Println("Light on\n")
+		log.Println("Light on")
 		relay1.Write(rpi.LOW)
 		relay2.Write(rpi.LOW)
 		relay3.Write(rpi.LOW)
@@ -113,7 +113,7 @@ func main() {
 		log.Println("Sleep 18 Hours")
 		time.Sleep(18 * time.Hour)
 
-		log.Println("Light off\n")
+		log.Println("Light off")
 		relay1.Write(rpi.HIGH)
 		relay2.Write(rpi.HIGH)
 		relay3.Write(rpi.HIGH)
