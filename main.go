@@ -75,7 +75,7 @@ func main() {
 			demo()
 		}
 	}
-	sec =: int64(os.Getenv("DELAY"))
+	sec := int64(os.Getenv("DELAY"))
 
 	relay1, _ := rpi.OpenPin(Relay1, rpi.OUT)
 	relay2, _ := rpi.OpenPin(Relay2, rpi.OUT)
