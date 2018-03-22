@@ -70,11 +70,13 @@ func demo() {
 }
 
 func main() {
+	sec := 0
 	for _, v := range os.Args {
 		if v == "demo" {
 			demo()
 		}
 	}
+	sec = os.Getenv("DELAY")
 
 	relay1, _ := rpi.OpenPin(Relay1, rpi.OUT)
 	relay2, _ := rpi.OpenPin(Relay2, rpi.OUT)
@@ -99,8 +101,8 @@ func main() {
 		relay5.Write(rpi.HIGH)
 		relay6.Write(rpi.HIGH)
 
-		log.Println("Sleep 30 sec")
-		time.Sleep(30 * time.Second)
+		log.Printf("Sleep %v hours", sec)
+		time.Sleep(int(sec) * time.Second)
 
 		log.Println("Light on")
 		relay1.Write(rpi.LOW)
@@ -111,7 +113,7 @@ func main() {
 		relay6.Write(rpi.LOW)
 
 		log.Println("Sleep 18 Hours")
-		time.Sleep(18 * time.Hour)
+		time.Sleep(12 * time.Hour)
 
 		log.Println("Light off")
 		relay1.Write(rpi.HIGH)
@@ -122,6 +124,6 @@ func main() {
 		relay6.Write(rpi.HIGH)
 
 		log.Println("Sleep 6 Hours")
-		time.Sleep(6 * time.Hour)
+		time.Sleep(12 * time.Hour)
 	}
 }
