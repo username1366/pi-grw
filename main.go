@@ -116,8 +116,8 @@ func main() {
 		relay5.Write(rpi.LOW)
 		relay6.Write(rpi.LOW)
 
-		log.Println("Sleep 18 Hours")
-		time.Sleep(18 * time.Hour)
+		log.Println("Sleep 12 Hours")
+		time.Sleep(12 * time.Hour)
 
 		log.Println("Light off")
 		relay1.Write(rpi.HIGH)
@@ -127,7 +127,7 @@ func main() {
 		relay5.Write(rpi.HIGH)
 		relay6.Write(rpi.HIGH)
 
-		log.Println("Sleep 6 Hours")
-		time.Sleep(6 * time.Hour)
+		log.Println("Sleep 12 Hours")
+		time.Sleep(12 * time.Hour)
 	}
 }
